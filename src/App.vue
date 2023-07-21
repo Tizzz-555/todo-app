@@ -54,6 +54,7 @@ export default {
       { title: "Todo", icon: "mdi-format-list-checks", to: "/" },
       { title: "Completati", icon: "mdi-notebook", to: "/completati" },
       { title: "Albo", icon: "mdi-thought-bubble-outline", to: "/albo" },
+      { title: "About", icon: "mdi-information", to: "/about" },
     ],
   }),
 };
