@@ -14,8 +14,8 @@
           </v-list-item-action>
 
           <v-list-item-content>
-            <v-list-item-title>Notifications</v-list-item-title>
-            <v-list-item-subtitle>Allow notifications</v-list-item-subtitle>
+            <v-list-item-title>Wake up</v-list-item-title>
+            <v-list-item-subtitle>Username here</v-list-item-subtitle>
           </v-list-item-content>
         </template>
       </v-list-item>
