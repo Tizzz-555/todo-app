@@ -34,12 +34,11 @@
       </v-list>
     </v-navigation-drawer>
 
-    <!-- Header -->
     <v-app-bar
       app
-      color="#primary"
+      color="primary"
       dark
-      src="https://picsum.photos/1920/1080?random"
+      src="mountains.png"
       prominent
     >
       <template v-slot:img="{ props }">
@@ -49,9 +48,9 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Title</v-app-bar-title>
+      <v-toolbar-title>Vuetify Todo</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
