@@ -12,6 +12,7 @@
       clearable
     ></v-text-field>
     <v-list
+      v-if="tasks.length"
       class="pt-0"
       two-line
       flat
@@ -33,12 +34,15 @@
             </v-list-item-action>
 
             <v-list-item-content>
+              <!-- Title -->
               <v-list-item-title
                 :class="{ 'text-decoration-line-through': task.done }"
               >
                 {{ task.title }}
               </v-list-item-title>
-              <v-list-item-subtitle>Username here</v-list-item-subtitle>
+
+              <!-- Username -->
+              <v-list-item-subtitle> Username here </v-list-item-subtitle>
             </v-list-item-content>
 
             <!-- Delete button -->
@@ -55,6 +59,18 @@
         <v-divider></v-divider>
       </div>
     </v-list>
+    <div
+      v-else
+      class="no-tasks"
+    >
+      <v-icon
+        size="100"
+        color="primary"
+      >
+        mdi-checkbox-marked-circle-auto-outline
+      </v-icon>
+      <div class="text-h5 primary--text">No tasks</div>
+    </div>
   </div>
 </template>
 
@@ -103,3 +119,12 @@ export default {
   },
 };
 </script>
+
+<style lang="sass">
+.no-tasks
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  opacity: 0.5
+</style>
