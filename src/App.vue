@@ -20,6 +20,7 @@
         <v-list-item
           v-for="item in items"
           :key="item.title"
+          :to="item.to"
           link
         >
           <v-list-item-icon>
@@ -40,7 +41,7 @@
     </v-app-bar>
 
     <v-main>
-      <!--  -->
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
@@ -50,9 +51,9 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { title: "Todo", icon: "mdi-view-dashboard" },
-      { title: "Completati", icon: "mdi-image" },
-      { title: "Albo", icon: "mdi-help-box" },
+      { title: "Todo", icon: "mdi-format-list-checks", to: "/" },
+      { title: "Completati", icon: "mdi-notebook", to: "/completati" },
+      { title: "Albo", icon: "mdi-thought-bubble-outline", to: "/albo" },
     ],
   }),
 };
