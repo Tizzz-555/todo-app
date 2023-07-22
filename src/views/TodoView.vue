@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <field-add-task />
-    <!-- Alert message -->
 
     <list-tasks v-if="$store.state.tasks.length" />
 

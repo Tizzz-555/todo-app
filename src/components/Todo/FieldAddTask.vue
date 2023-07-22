@@ -12,7 +12,7 @@
       clearable
     ></v-text-field>
 
-    <!-- Include the Alert component here -->
+    <!-- Alert message -->
     <user-alert :showAlert="showAlert" />
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       newTaskTitle: "",
-      showAlert: false, // new data property to control the alert
+      showAlert: false,
     };
   },
   components: {
