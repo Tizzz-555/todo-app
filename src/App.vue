@@ -6,7 +6,7 @@
     >
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="title"> Vuetify Todo </v-list-item-title>
+          <v-list-item-title class="title"> To do </v-list-item-title>
           <v-list-item-subtitle> {{ user }} </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -50,7 +50,7 @@
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Vuetify Todo</v-toolbar-title>
+      <v-toolbar-title>To do</v-toolbar-title>
 
       <v-spacer></v-spacer>
 

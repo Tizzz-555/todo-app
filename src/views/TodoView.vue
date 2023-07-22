@@ -6,11 +6,21 @@
       @keyup.enter="addTask"
       class="pa-3"
       outlined
-      label="Add Task"
+      label="Aggiungi nota"
       append-icon="mdi-plus"
       hide-details
       clearable
     ></v-text-field>
+
+    <!-- Alert message -->
+    <v-alert
+      v-if="showAlert"
+      class="ml-3 mr-3 mb-3"
+      dense
+      type="info"
+    >
+      Per inserire una nota fai il login del tuo nome in "Utente".
+    </v-alert>
 
     <v-list
       v-if="$store.state.tasks.length"
@@ -68,7 +78,7 @@
         size="100"
         color="primary"
       >
-        mdi-checkbox-marked-circle-auto-outline
+        mdi-check-decagram
       </v-icon>
       <div class="text-h5 primary--text">No tasks</div>
     </div>
@@ -81,11 +91,18 @@ export default {
   data() {
     return {
       newTaskTitle: "",
+      showAlert: false, // new data property to control the alert
     };
   },
   methods: {
     addTask() {
-      this.$store.commit("addTask", this.newTaskTitle);
+      if (this.$store.state.user) {
+        this.$store.commit("addTask", this.newTaskTitle);
+        this.newTaskTitle = "";
+        this.showAlert = false; // hide the alert if a task is successfully added
+      } else {
+        this.showAlert = true; // show the alert if a user isn't set up
+      }
     },
   },
 };
@@ -98,4 +115,8 @@ export default {
   top: 50%
   transform: translate(-50%, -50%)
   opacity: 0.5
+
+@media (max-height: 500px)
+  .no-tasks
+    display: none
 </style>
