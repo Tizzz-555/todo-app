@@ -11,6 +11,15 @@ const routes = [
     component: TodoView,
   },
   {
+    path: "/utente",
+    name: "Utente",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/UtenteView.vue"),
+  },
+  {
     path: "/completati",
     name: "Completati",
     // route level code-splitting

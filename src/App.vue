@@ -7,7 +7,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title"> Vuetify Todo </v-list-item-title>
-          <v-list-item-subtitle> Mattia Beccari </v-list-item-subtitle>
+          <v-list-item-subtitle> Username here </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
 
@@ -79,6 +79,7 @@ export default {
     drawer: null,
     items: [
       { title: "Todo", icon: "mdi-format-list-checks", to: "/" },
+      { title: "Utente", icon: "mdi-account-circle", to: "/utente" },
       { title: "Completati", icon: "mdi-notebook", to: "/completati" },
       { title: "Albo", icon: "mdi-thought-bubble-outline", to: "/albo" },
       { title: "About", icon: "mdi-information", to: "/about" },

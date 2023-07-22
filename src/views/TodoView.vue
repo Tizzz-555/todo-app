@@ -42,7 +42,7 @@
               </v-list-item-title>
 
               <!-- Username -->
-              <v-list-item-subtitle> Username here </v-list-item-subtitle>
+              <v-list-item-subtitle> {{ task.user }}</v-list-item-subtitle>
             </v-list-item-content>
 
             <!-- Delete button -->
@@ -80,23 +80,7 @@ export default {
   data() {
     return {
       newTaskTitle: "",
-      tasks: [
-        // {
-        //   id: 1,
-        //   title: "Wake up",
-        //   done: false,
-        // },
-        // {
-        //   id: 2,
-        //   title: "Get bananas",
-        //   done: false,
-        // },
-        // {
-        //   id: 3,
-        //   title: "Eat bananas",
-        //   done: false,
-        // },
-      ],
+      tasks: [],
     };
   },
   methods: {
@@ -104,6 +88,7 @@ export default {
       let newTask = {
         id: Date.now(),
         title: this.newTaskTitle,
+        user: "",
         done: false,
       };
       this.tasks.push(newTask);
