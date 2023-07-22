@@ -81,19 +81,11 @@ export default {
   data() {
     return {
       newTaskTitle: "",
-      tasks: [],
     };
   },
   methods: {
     addTask() {
-      let newTask = {
-        id: Date.now(),
-        title: this.newTaskTitle,
-        user: "",
-        done: false,
-      };
-      this.tasks.push(newTask);
-      this.newTaskTitle = "";
+      this.$store.commit("addTask", this.newTaskTitle);
     },
     doneTask(id) {
       let task = this.tasks.filter((task) => task.id === id)[0];
