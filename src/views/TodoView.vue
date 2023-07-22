@@ -2,14 +2,6 @@
   <div class="home">
     <field-add-task />
     <!-- Alert message -->
-    <v-alert
-      v-if="showAlert"
-      class="ml-3 mr-3 mb-3"
-      dense
-      type="info"
-    >
-      Per inserire una nota fai il login del tuo nome in "Utente".
-    </v-alert>
 
     <v-list
       v-if="$store.state.tasks.length"

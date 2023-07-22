@@ -1,15 +1,20 @@
 <template>
-  <v-text-field
-    v-model="newTaskTitle"
-    @click:append="addTask"
-    @keyup.enter="addTask"
-    class="pa-3"
-    outlined
-    label="Aggiungi nota"
-    append-icon="mdi-plus"
-    hide-details
-    clearable
-  ></v-text-field>
+  <div>
+    <v-text-field
+      v-model="newTaskTitle"
+      @click:append="addTask"
+      @keyup.enter="addTask"
+      class="pa-3"
+      outlined
+      label="Aggiungi nota"
+      append-icon="mdi-plus"
+      hide-details
+      clearable
+    ></v-text-field>
+
+    <!-- Include the Alert component here -->
+    <user-alert :showAlert="showAlert" />
+  </div>
 </template>
 
 <script>
@@ -19,6 +24,9 @@ export default {
       newTaskTitle: "",
       showAlert: false, // new data property to control the alert
     };
+  },
+  components: {
+    "user-alert": require("@/components/Todo/UserAlert.vue").default,
   },
   methods: {
     addTask() {
