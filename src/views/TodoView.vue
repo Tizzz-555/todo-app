@@ -49,7 +49,7 @@
             <!-- Delete button -->
             <v-list-item-action>
               <v-btn
-                @click.stop="deleteTask(task.id)"
+                @click.stop="$store.commit('deleteTask', task.id)"
                 icon
               >
                 <v-icon color="primary lighten-1">mdi-delete</v-icon>
@@ -86,10 +86,6 @@ export default {
   methods: {
     addTask() {
       this.$store.commit("addTask", this.newTaskTitle);
-    },
-
-    deleteTask(id) {
-      this.tasks = this.tasks.filter((task) => task.id !== id);
     },
   },
 };
