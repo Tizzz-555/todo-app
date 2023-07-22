@@ -5,28 +5,25 @@
     max-width="290"
   >
     <v-card>
-      <v-card-title class="text-h5">
-        Use Google's location service?
-      </v-card-title>
+      <v-card-title class="text-h5"> Eliminare nota? </v-card-title>
       <v-card-text
-        >Let Google help apps determine location. This means sending anonymous
-        location data to Google, even when no apps are running.</v-card-text
+        >Sei sicuro di voler eliminare questa nota prima di averla
+        completata?</v-card-text
       >
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn
-          color="green darken-1"
           text
           @click="dialog = false"
         >
-          Disagree
+          No
         </v-btn>
         <v-btn
-          color="green darken-1"
+          color="red"
           text
           @click="dialog = false"
         >
-          Agree
+          Sì
         </v-btn>
       </v-card-actions>
     </v-card>
