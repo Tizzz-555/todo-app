@@ -55,7 +55,7 @@ export default {
   data: () => ({
     dialogs: {
       edit: false,
-      dueDate: true,
+      dueDate: false,
       delete: false,
     },
     items: [
@@ -70,7 +70,7 @@ export default {
         title: "Data",
         icon: "mdi-calendar",
         click() {
-          console.log("due date");
+          this.dialogs.dueDate = true;
         },
       },
       {
