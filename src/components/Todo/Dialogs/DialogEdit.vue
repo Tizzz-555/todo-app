@@ -19,7 +19,7 @@
           @click="$emit('close')"
           text
         >
-          Esci
+          Annulla
         </v-btn>
         <v-btn
           @click="saveTask"
