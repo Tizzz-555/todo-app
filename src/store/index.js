@@ -5,33 +5,18 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    tasks: [
-      {
-        id: 1,
-        title: "Wake up",
-        user: "",
-        done: false,
-      },
-      {
-        id: 2,
-        title: "Banana",
-        user: "",
-        done: false,
-      },
-      {
-        id: 3,
-        title: "Tomato",
-        user: "",
-        done: false,
-      },
-    ],
+    tasks: [],
+    user: "",
   },
   mutations: {
+    setUser(state, name) {
+      state.user = name;
+    },
     addTask(state, newTaskTitle) {
       let newTask = {
         id: Date.now(),
         title: newTaskTitle,
-        user: "",
+        user: state.user,
         done: false,
       };
       state.tasks.push(newTask);

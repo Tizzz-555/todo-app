@@ -13,12 +13,17 @@
       ></v-text-field>
 
       <v-btn
-        class="mr-4"
+        class="mr-4 mt-4"
         @click="submit"
       >
         submit
       </v-btn>
-      <v-btn @click="clear"> clear </v-btn>
+      <v-btn
+        class="mr-4 mt-4"
+        @click="clear"
+      >
+        clear
+      </v-btn>
     </form>
   </div>
 </template>
@@ -26,6 +31,7 @@
 <script>
 import { validationMixin } from "vuelidate";
 import { required, maxLength } from "vuelidate/lib/validators";
+import { mapMutations } from "vuex"; // import mapMutations from Vuex
 
 export default {
   mixins: [validationMixin],
@@ -50,9 +56,13 @@ export default {
   },
 
   methods: {
+    ...mapMutations(["setUser"]), // map the setUser mutation
     submit() {
       this.$v.$touch();
-      console.log(this.name);
+      if (!this.$v.$invalid) {
+        this.setUser(this.name); // call the mutation when the form is valid
+        console.log(this.name);
+      }
     },
     clear() {
       this.$v.$reset();
@@ -61,3 +71,5 @@ export default {
   },
 };
 </script>
+
+// class="mr-4"

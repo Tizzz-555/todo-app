@@ -7,7 +7,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title"> Vuetify Todo </v-list-item-title>
-          <v-list-item-subtitle> Username here </v-list-item-subtitle>
+          <v-list-item-subtitle> {{ user }} </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
 
@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data: () => ({
     drawer: null,
@@ -85,5 +86,8 @@ export default {
       { title: "About", icon: "mdi-information", to: "/about" },
     ],
   }),
+  computed: {
+    ...mapState(["user"]), // map the user state property
+  },
 };
 </script>
