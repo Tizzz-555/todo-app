@@ -11,18 +11,21 @@ export default new Vuex.Store({
         title: "Wake up",
         user: "Gargiu",
         done: false,
+        dueDate: "2023-10-16",
       },
       {
         id: 2,
         title: "Sit Down",
         user: "Maignan",
         done: false,
+        dueDate: "2023-10-16",
       },
       {
         id: 3,
         title: "Eat lunch",
         user: "Leao",
         done: false,
+        dueDate: null,
       },
     ],
     user: "",
@@ -41,6 +44,7 @@ export default new Vuex.Store({
         title: newTaskTitle,
         user: state.user,
         done: false,
+        dueDate: null,
       };
       state.tasks.push(newTask);
     },
