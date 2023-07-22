@@ -31,7 +31,7 @@ export default {
   methods: {
     addTask() {
       if (this.$store.state.user) {
-        this.$store.commit("addTask", this.newTaskTitle);
+        this.$store.dispatch("addTask", this.newTaskTitle);
         this.newTaskTitle = "";
         this.showAlert = false; // hide the alert if a task is successfully added
       } else {

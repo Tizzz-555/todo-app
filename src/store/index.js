@@ -8,7 +8,7 @@ export default new Vuex.Store({
     tasks: [],
     user: "",
     snackbar: {
-      show: true,
+      show: false,
     },
   },
   mutations: {
@@ -31,7 +31,15 @@ export default new Vuex.Store({
     deleteTask(state, id) {
       state.tasks = state.tasks.filter((task) => task.id !== id);
     },
+    showSnackbar(state) {
+      state.snackbar.show = true;
+    },
   },
-  actions: {},
+  actions: {
+    addTask({ commit }, newTaskTitle) {
+      commit("addTask", newTaskTitle);
+      commit("showSnackbar");
+    },
+  },
   getters: {},
 });
