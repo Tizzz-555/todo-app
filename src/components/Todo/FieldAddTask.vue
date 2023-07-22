@@ -7,10 +7,19 @@
       class="pa-3"
       outlined
       label="Aggiungi nota"
-      append-icon="mdi-plus"
       hide-details
       clearable
-    ></v-text-field>
+    >
+      <template v-slot:append>
+        <v-icon
+          @click="addTask"
+          color="primary"
+          :disabled="newTaskTitleInvalid"
+        >
+          mdi-plus
+        </v-icon>
+      </template>
+    </v-text-field>
 
     <!-- Alert message -->
     <user-alert :showAlert="showAlert" />
@@ -28,12 +37,19 @@ export default {
   components: {
     "user-alert": require("@/components/Todo/UserAlert.vue").default,
   },
+  computed: {
+    newTaskTitleInvalid() {
+      return !this.newTaskTitle;
+    },
+  },
   methods: {
     addTask() {
       if (this.$store.state.user) {
-        this.$store.dispatch("addTask", this.newTaskTitle);
-        this.newTaskTitle = "";
-        this.showAlert = false; // hide the alert if a task is successfully added
+        if (!this.newTaskTitleInvalid) {
+          this.$store.dispatch("addTask", this.newTaskTitle);
+          this.newTaskTitle = "";
+          this.showAlert = false; // hide the alert if a task is successfully added
+        }
       } else {
         this.showAlert = true; // show the alert if a user isn't set up
       }
