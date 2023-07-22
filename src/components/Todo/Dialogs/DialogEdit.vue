@@ -8,7 +8,10 @@
       <v-card-title class="text-h5"> Modificare nota? </v-card-title>
       <v-card-text
         >Modifica il titolo di questa nota:
-        <v-text-field v-model="taskTitle" />
+        <v-text-field
+          v-model="taskTitle"
+          @keyup.enter="saveTask"
+        />
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -45,6 +48,7 @@ export default {
         title: this.taskTitle,
       };
       this.$store.commit("updateTaskTitle", payload);
+      this.$emit("close");
     },
   },
   mounted() {
