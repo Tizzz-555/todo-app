@@ -61,7 +61,7 @@ export default {
       this.$v.$touch();
       if (!this.$v.$invalid) {
         this.setUser(this.name); // call the mutation when the form is valid
-        console.log(this.name);
+        this.$router.push("/");
       }
     },
     clear() {
@@ -71,5 +71,3 @@ export default {
   },
 };
 </script>
-
-// class="mr-4"
