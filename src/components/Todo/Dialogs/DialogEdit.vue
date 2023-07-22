@@ -8,7 +8,7 @@
       <v-card-title class="text-h5"> Modificare nota? </v-card-title>
       <v-card-text
         >Modifica il titolo di questa nota:
-        <v-text-field />
+        <v-text-field v-model="taskTitle" />
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -33,6 +33,14 @@
 <script>
 export default {
   props: ["task"],
+  data() {
+    return {
+      taskTitle: null,
+    };
+  },
+  mounted() {
+    this.taskTitle = this.task.title;
+  },
 };
 </script>
 
