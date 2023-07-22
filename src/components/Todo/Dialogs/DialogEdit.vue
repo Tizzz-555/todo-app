@@ -19,7 +19,7 @@
           Esci
         </v-btn>
         <v-btn
-          @click="$store.dispatch('deleteTask', task.id)"
+          @click="saveTask"
           color="red"
           text
         >
@@ -37,6 +37,15 @@ export default {
     return {
       taskTitle: null,
     };
+  },
+  methods: {
+    saveTask() {
+      let payload = {
+        id: this.task.id,
+        title: this.taskTitle,
+      };
+      this.$store.commit("updateTaskTitle", payload);
+    },
   },
   mounted() {
     this.taskTitle = this.task.title;
