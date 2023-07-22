@@ -11,14 +11,15 @@
       hide-details
       clearable
     ></v-text-field>
+
     <v-list
-      v-if="tasks.length"
+      v-if="$store.state.tasks.length"
       class="pt-0"
       two-line
       flat
     >
       <div
-        v-for="task in tasks"
+        v-for="task in $store.state.tasks"
         :key="task.id"
       >
         <v-list-item
