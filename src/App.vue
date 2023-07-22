@@ -69,6 +69,7 @@
 
     <v-main>
       <router-view></router-view>
+      <snackbar />
     </v-main>
   </v-app>
 </template>
@@ -88,6 +89,9 @@ export default {
   }),
   computed: {
     ...mapState(["user"]), // map the user state property
+  },
+  components: {
+    snackbar: require("@/components/Shared/SnackBar.vue").default,
   },
 };
 </script>

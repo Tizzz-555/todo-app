@@ -7,6 +7,9 @@ export default new Vuex.Store({
   state: {
     tasks: [],
     user: "",
+    snackbar: {
+      show: true,
+    },
   },
   mutations: {
     setUser(state, name) {
