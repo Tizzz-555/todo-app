@@ -67,6 +67,10 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    setUser({ commit }, name) {
+      commit("setUser", name);
+      commit("showSnackbar", "User aggiunto!");
+    },
     addTask({ commit }, newTaskTitle) {
       commit("addTask", newTaskTitle);
       commit("showSnackbar", "Todo aggiunto!");

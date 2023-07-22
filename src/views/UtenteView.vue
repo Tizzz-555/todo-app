@@ -56,11 +56,10 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setUser"]), // map the setUser mutation
     submit() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        this.setUser(this.name); // call the mutation when the form is valid
+        this.$store.dispatch("setUser", this.name); // call the action instead of the mutation
         this.$router.push("/");
       }
     },
