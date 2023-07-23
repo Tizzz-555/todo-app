@@ -69,7 +69,9 @@
           <search />
         </v-row>
         <v-row>
-          <v-toolbar-title class="text-h4 ml-4"> To do </v-toolbar-title>
+          <v-toolbar-title class="text-h4 ml-4">
+            {{ appTitle }}
+          </v-toolbar-title>
         </v-row>
         <v-row>
           <live-date-time />
@@ -98,7 +100,10 @@ export default {
     ],
   }),
   computed: {
-    ...mapState(["user"]), // map the user state property
+    ...mapState(["user"]),
+    appTitle() {
+      return process.env.VUE_APP_TITLE;
+    },
   },
   components: {
     search: require("@/components/Tools/Search.vue").default,
