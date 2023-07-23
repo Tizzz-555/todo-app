@@ -34,7 +34,10 @@
         </v-list-item-action>
 
         <v-list-item-action>
-          <task-menu :task="task" />
+          <task-menu
+            :task="task"
+            :isCompleted="task.done"
+          />
         </v-list-item-action>
 
         <v-list-item-action v-if="$store.state.sorting">

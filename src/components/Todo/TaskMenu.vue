@@ -51,44 +51,52 @@
 
 <script>
 export default {
-  props: ["task"],
+  props: ["task", "isCompleted"],
   data: () => ({
     dialogs: {
       edit: false,
       dueDate: false,
       delete: false,
     },
-    items: [
-      {
-        title: "Modifica",
-        icon: "mdi-pencil",
-        click() {
-          this.dialogs.edit = true;
-        },
-      },
-      {
-        title: "Data",
-        icon: "mdi-calendar",
-        click() {
-          this.dialogs.dueDate = true;
-        },
-      },
-      {
-        title: "Elimina",
-        icon: "mdi-delete",
-        click() {
-          this.dialogs.delete = true;
-        },
-      },
-      {
-        title: "Ordina",
-        icon: "mdi-drag-horizontal-variant",
-        click() {
-          this.$store.commit("toggleSorting");
-        },
-      },
-    ],
   }),
+  computed: {
+    items() {
+      return [
+        {
+          title: "Modifica",
+          icon: "mdi-pencil",
+          click() {
+            this.dialogs.edit = true;
+          },
+          show: !this.isCompleted,
+        },
+        {
+          title: "Data",
+          icon: "mdi-calendar",
+          click() {
+            this.dialogs.dueDate = true;
+          },
+          show: !this.isCompleted,
+        },
+        {
+          title: "Elimina",
+          icon: "mdi-delete",
+          click() {
+            this.dialogs.delete = true;
+          },
+          show: true,
+        },
+        {
+          title: "Ordina",
+          icon: "mdi-drag-horizontal-variant",
+          click() {
+            this.$store.commit("toggleSorting");
+          },
+          show: !this.isCompleted,
+        },
+      ].filter((item) => item.show);
+    },
+  },
   methods: {
     handleClick(index) {
       this.items[index].click.call(this);
