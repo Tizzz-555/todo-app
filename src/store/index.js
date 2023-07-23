@@ -151,5 +151,8 @@ export default new Vuex.Store({
           task.user.toLowerCase().includes(state.search.toLowerCase())
       );
     },
+    completedTasks(state) {
+      return state.tasks.filter((task) => task.done);
+    },
   },
 });
