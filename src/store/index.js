@@ -104,5 +104,16 @@ export default new Vuex.Store({
       commit("showSnackbar", "Data modificata!");
     },
   },
-  getters: {},
+  getters: {
+    tasksFiltered(state) {
+      if (!state.search) {
+        return state.tasks;
+      }
+      return state.tasks.filter(
+        (task) =>
+          task.title.toLowerCase().includes(state.search.toLowerCase()) ||
+          task.user.toLowerCase().includes(state.search.toLowerCase())
+      );
+    },
+  },
 });
