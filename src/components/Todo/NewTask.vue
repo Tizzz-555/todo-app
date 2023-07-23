@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-list-item
-      @click="$store.dispatch('doneTask', task.id)"
+      @click="!isCompleted && $store.dispatch('doneTask', task.id)"
       :class="{ 'blue lighten-5': task.done }"
       class="white"
       :ripple="false"
@@ -11,6 +11,7 @@
           <v-checkbox
             :input-value="task.done"
             color="primary"
+            :disabled="isCompleted"
           ></v-checkbox>
         </v-list-item-action>
 
@@ -60,7 +61,7 @@ import { formatWithOptions } from "date-fns/fp";
 import { it } from "date-fns/locale";
 
 export default {
-  props: ["task"],
+  props: ["task", "isCompleted"],
   filters: {
     niceDate(value) {
       return formatWithOptions({ locale: it }, "d MMM")(new Date(value));

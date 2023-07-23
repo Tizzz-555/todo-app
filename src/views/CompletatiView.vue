@@ -18,6 +18,7 @@
         v-for="task in filteredTasks"
         :key="task.id"
         :task="task"
+        :isCompleted="true"
       />
     </v-list>
   </div>

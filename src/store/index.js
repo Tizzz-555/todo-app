@@ -37,6 +37,9 @@ export default new Vuex.Store({
     deleteTask(state, id) {
       state.tasks = state.tasks.filter((task) => task.id !== id);
     },
+    deleteDoneTask(state, id) {
+      state.doneTasks = state.doneTasks.filter((task) => task.id !== id);
+    },
     updateTaskTitle(state, payload) {
       let task = state.tasks.filter((task) => task.id === payload.id)[0];
       task.title = payload.title;
@@ -115,12 +118,19 @@ export default new Vuex.Store({
           }
         });
     },
-    deleteTask({ commit }, id) {
+    deleteTask({ commit, state }, id) {
+      let task = [...state.tasks, ...state.doneTasks].find(
+        (task) => task.id === id
+      );
+      if (!task) {
+        console.error(`No task found with ID ${id}`);
+        return;
+      }
       db.collection("tasks")
         .doc({ id: id })
         .delete()
         .then(() => {
-          commit("deleteTask", id);
+          commit(task.done ? "deleteDoneTask" : "deleteTask", id);
           commit("showSnackbar", "Nota eliminata!");
         });
     },
