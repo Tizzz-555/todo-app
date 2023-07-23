@@ -18,6 +18,7 @@ export default new Vuex.Store({
       text: "",
     },
     sorting: false,
+    doneTasks: [],
   },
   mutations: {
     setUser(state, name) {
@@ -65,6 +66,18 @@ export default new Vuex.Store({
     toggleSorting(state) {
       state.sorting = !state.sorting;
     },
+    moveToDoneTasks(state, id) {
+      let taskIndex = state.tasks.findIndex((task) => task.id === id);
+      if (taskIndex !== -1 && state.tasks[taskIndex].done) {
+        let task = state.tasks.splice(taskIndex, 1)[0];
+        state.doneTasks.push(task);
+        state.snackbar.show = true;
+        state.snackbar.text = "Nota aggiunta a Completati!";
+      }
+    },
+    setDoneTasks(state, tasks) {
+      state.doneTasks = tasks;
+    },
   },
   actions: {
     setUser({ commit }, name) {
@@ -95,6 +108,11 @@ export default new Vuex.Store({
         })
         .then(() => {
           commit("doneTask", id);
+          if (task.done) {
+            setTimeout(() => {
+              commit("moveToDoneTasks", id);
+            }, 3000);
+          }
         });
     },
     deleteTask({ commit }, id) {
@@ -136,7 +154,10 @@ export default new Vuex.Store({
       db.collection("tasks")
         .get()
         .then((tasks) => {
-          commit("setTasks", tasks);
+          const undoneTasks = tasks.filter((task) => !task.done);
+          const doneTasks = tasks.filter((task) => task.done);
+          commit("setTasks", undoneTasks);
+          commit("setDoneTasks", doneTasks);
         });
     },
   },
@@ -152,7 +173,14 @@ export default new Vuex.Store({
       );
     },
     completedTasks(state) {
-      return state.tasks.filter((task) => task.done);
+      if (!state.search) {
+        return state.doneTasks;
+      }
+      return state.doneTasks.filter(
+        (task) =>
+          task.title.toLowerCase().includes(state.search.toLowerCase()) ||
+          task.user.toLowerCase().includes(state.search.toLowerCase())
+      );
     },
   },
 });
