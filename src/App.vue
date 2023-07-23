@@ -48,13 +48,16 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title>To do</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <search />
+      <v-container class="pa-3">
+        <v-row>
+          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-spacer></v-spacer>
+          <search />
+        </v-row>
+        <v-row>
+          <v-toolbar-title class="ml-2">To do</v-toolbar-title>
+        </v-row>
+      </v-container>
     </v-app-bar>
 
     <v-main>
