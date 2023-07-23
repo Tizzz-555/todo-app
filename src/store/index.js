@@ -35,6 +35,7 @@ export default new Vuex.Store({
       show: false,
       text: "",
     },
+    sorting: false,
   },
   mutations: {
     setUser(state, name) {
