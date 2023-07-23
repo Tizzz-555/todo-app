@@ -4,7 +4,7 @@
       <v-text-field
         v-model="name"
         :error-messages="nameErrors"
-        :counter="10"
+        :counter="20"
         label="Nome utente"
         required
         @input="$v.name.$touch()"
@@ -37,7 +37,7 @@ export default {
   mixins: [validationMixin],
 
   validations: {
-    name: { required, maxLength: maxLength(10) },
+    name: { required, maxLength: maxLength(20) },
   },
 
   data: () => ({
