@@ -5,10 +5,18 @@
       app
     >
       <v-img
+        class="pa-4"
         src="mountains2.jpg"
         height="170"
         gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
-      ></v-img>
+      >
+        <v-avatar size="70">
+          <img
+            src="spennellata2.jpeg"
+            alt="Mattia Beccari"
+          />
+        </v-avatar>
+      </v-img>
 
       <v-list
         dense
@@ -72,7 +80,7 @@
 import { mapState } from "vuex";
 export default {
   data: () => ({
-    drawer: null,
+    drawer: true,
     items: [
       { title: "Todo", icon: "mdi-format-list-checks", to: "/" },
       { title: "Utente", icon: "mdi-account-circle", to: "/utente" },
