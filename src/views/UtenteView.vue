@@ -1,12 +1,15 @@
 <template>
-  <div class="utente pa-6">
+  <div class="utente pa-4">
+    <h1>Nome Utente</h1>
     <form>
       <v-text-field
+        class="ml-4"
         v-model="name"
         :error-messages="nameErrors"
         :counter="20"
-        label="Nome utente"
+        label="Inserisci nome"
         required
+        clearable
         @input="$v.name.$touch()"
         @blur="$v.name.$touch()"
         @keyup.enter="submit"

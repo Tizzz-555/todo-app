@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 class="completati pa-4">Note Completate</h1>
+  <div class="completati pa-4">
+    <h1>Note Completate</h1>
     <v-select
       class="ml-4"
       :items="userNames"
