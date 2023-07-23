@@ -41,13 +41,14 @@
 </template>
 
 <script>
-import { format } from "date-fns";
+import { formatWithOptions } from "date-fns/fp";
+import { it } from "date-fns/locale";
 
 export default {
   props: ["task"],
   filters: {
     niceDate(value) {
-      return format(new Date(value), "MMM d");
+      return formatWithOptions({ locale: it }, "d MMM")(new Date(value));
     },
   },
   components: {

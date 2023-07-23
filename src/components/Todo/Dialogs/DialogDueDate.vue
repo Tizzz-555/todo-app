@@ -9,6 +9,7 @@
     <v-date-picker
       v-model="date"
       scrollable
+      locale="it"
     >
       <v-spacer></v-spacer>
       <v-btn
