@@ -20,10 +20,10 @@
             alt="Mattia Beccari"
           />
         </v-avatar>
-        <div class="white--text text-subtitle-1 font-weight-bold">
+        <div class="ml-2 white--text text-subtitle-1 font-weight-bold">
           {{ user }}
         </div>
-        <div class="white--text text-subtitle-2">your_username</div>
+        <div class="ml-2 white--text text-subtitle-2">your_email@email.com</div>
       </v-img>
 
       <v-list

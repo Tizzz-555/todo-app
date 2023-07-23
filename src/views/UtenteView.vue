@@ -31,7 +31,7 @@
 <script>
 import { validationMixin } from "vuelidate";
 import { required, maxLength } from "vuelidate/lib/validators";
-import { mapMutations } from "vuex"; // import mapMutations from Vuex
+// import { mapMutations } from "vuex"; // import mapMutations from Vuex
 
 export default {
   mixins: [validationMixin],
