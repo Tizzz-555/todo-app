@@ -101,8 +101,15 @@ export default new Vuex.Store({
       commit("showSnackbar", "Nota eliminata!");
     },
     updateTaskTitle({ commit }, payload) {
-      commit("updateTaskTitle", payload);
-      commit("showSnackbar", "Nota modificata!");
+      db.collection("tasks")
+        .doc({ id: payload.id })
+        .update({
+          title: payload.title,
+        })
+        .then(() => {
+          commit("updateTaskTitle", payload);
+          commit("showSnackbar", "Nota modificata!");
+        });
     },
     updateTaskDueDate({ commit }, payload) {
       commit("updateTaskDueDate", payload);
