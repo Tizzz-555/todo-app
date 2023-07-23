@@ -62,7 +62,7 @@
         ></v-img>
       </template>
 
-      <v-container class="header-container pa-0">
+      <v-container class="header-container pt-3">
         <v-row>
           <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
           <v-spacer></v-spacer>
@@ -70,7 +70,7 @@
         </v-row>
         <v-row>
           <v-toolbar-title class="text-h4 ml-4">
-            {{ appTitle }}
+            {{ $store.state.appTitle }}
           </v-toolbar-title>
         </v-row>
         <v-row>
@@ -101,9 +101,6 @@ export default {
   }),
   computed: {
     ...mapState(["user"]),
-    appTitle() {
-      return process.env.VUE_APP_TITLE;
-    },
   },
   components: {
     search: require("@/components/Tools/Search.vue").default,
