@@ -69,6 +69,9 @@ export default new Vuex.Store({
       let task = state.tasks.filter((task) => task.id === payload.id)[0];
       task.dueDate = payload.dueDate;
     },
+    setTasks(state, tasks) {
+      state.tasks = tasks;
+    },
     showSnackbar(state, text) {
       let timeout = 0;
       if (state.snackbar.show) {
