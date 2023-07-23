@@ -38,6 +38,7 @@
         <v-list-item-action v-if="$store.state.sorting">
           <v-btn
             color="primary"
+            class="handle"
             icon
           >
             <v-icon>mdi-drag-horizontal-variant</v-icon>
