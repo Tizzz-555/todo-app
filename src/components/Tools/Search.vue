@@ -1,6 +1,6 @@
 <template>
   <v-text-field
-    class="expanding-search mt-1"
+    class="expanding-search mt-1 closed"
     placeholder="Cerca"
     prepend-inner-icon="mdi-magnify"
     filled
@@ -18,4 +18,6 @@ export default {};
   .v-input__slot
     &:before, &:after
       border-color: transparent !important
+  &.closed
+    max-width: 45px
 </style>
