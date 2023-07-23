@@ -10,29 +10,7 @@ export default new Vuex.Store({
   state: {
     appTitle: process.env.VUE_APP_TITLE,
     search: null,
-    tasks: [
-      // {
-      //   id: 1,
-      //   title: "Wake up",
-      //   user: "Gargiu",
-      //   done: false,
-      //   dueDate: "2023-10-16",
-      // },
-      // {
-      //   id: 2,
-      //   title: "Sit Down",
-      //   user: "Maignan",
-      //   done: false,
-      //   dueDate: "2023-10-16",
-      // },
-      // {
-      //   id: 3,
-      //   title: "Eat lunch",
-      //   user: "Leao",
-      //   done: false,
-      //   dueDate: null,
-      // },
-    ],
+    tasks: [],
     user: "",
     snackbar: {
       show: false,
@@ -118,6 +96,13 @@ export default new Vuex.Store({
     updateTaskDueDate({ commit }, payload) {
       commit("updateTaskDueDate", payload);
       commit("showSnackbar", "Data modificata!");
+    },
+    getTasks({ commit }) {
+      db.collection("tasks")
+        .get()
+        .then((tasks) => {
+          commit("setTasks", tasks);
+        });
     },
   },
   getters: {

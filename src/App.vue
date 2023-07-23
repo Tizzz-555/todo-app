@@ -99,6 +99,9 @@ export default {
       { title: "About", icon: "mdi-information", to: "/about" },
     ],
   }),
+  mounted() {
+    this.$store.dispatch("getTasks");
+  },
   computed: {
     ...mapState(["user"]),
   },
