@@ -1,7 +1,11 @@
 <template>
   <v-text-field
-    label="Filled"
+    class="expanding-search mt-1"
+    placeholder="Cerca"
+    prepend-inner-icon="mdi-magnify"
     filled
+    dense
+    clearable
   ></v-text-field>
 </template>
 
@@ -9,6 +13,9 @@
 export default {};
 </script>
 
-<style>
-/* signopost */
+<style lang="sass">
+.expanding-search
+  .v-input__slot
+    &:before, &:after
+      border-color: transparent !important
 </style>
