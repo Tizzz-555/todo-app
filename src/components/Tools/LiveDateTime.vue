@@ -16,7 +16,11 @@ export default {
   },
   methods: {
     getDate() {
-      this.date = formatWithOptions({ locale: it }, "EEEE d MMMM ")(new Date());
+      this.date = formatWithOptions(
+        { locale: it },
+        "EEEE d MMMM, H:mm "
+      )(new Date());
+      setTimeout(this.getDate, 1000);
     },
   },
   mounted() {
