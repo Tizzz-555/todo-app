@@ -182,5 +182,13 @@ export default new Vuex.Store({
           task.user.toLowerCase().includes(state.search.toLowerCase())
       );
     },
+    userNames(state) {
+      const users = new Set(); // use Set to avoid duplicates
+      // Merge tasks and doneTasks before collecting user names
+      [...state.tasks, ...state.doneTasks].forEach((task) =>
+        users.add(task.user)
+      );
+      return [...users]; // convert Set back to Array
+    },
   },
 });
