@@ -45,9 +45,13 @@ export default {
   },
   methods: {
     fetchComic(num) {
-      this.$axios.get(`/xkcd?number=${num}`).then((response) => {
-        this.comic = response.data;
-      });
+      this.$axios
+        .get(
+          `https://todoita-vuetify.netlify.app/.netlify/functions/xkcd?number=${num}`
+        )
+        .then((response) => {
+          this.comic = response.data;
+        });
     },
   },
 };
