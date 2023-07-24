@@ -22,3 +22,5 @@ pnpm-debug.log*
 *.sln
 *.sw?
 *scaffold.txt
+# Local Netlify folder
+.netlify
