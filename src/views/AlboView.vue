@@ -45,11 +45,9 @@ export default {
   },
   methods: {
     fetchComic(num) {
-      this.$axios
-        .get(`http://localhost:8888/.netlify/functions/xkcd?number=${num}`)
-        .then((response) => {
-          this.comic = response.data;
-        });
+      this.$axios.get(`/xkcd?number=${num}`).then((response) => {
+        this.comic = response.data;
+      });
     },
   },
 };
