@@ -2,7 +2,7 @@
   <div class="completati pa-4">
     <h1>Note Completate</h1>
     <v-select
-      class="ml-4"
+      class="ml-4 mt-5"
       :items="userNames"
       label="Utenti"
       dense
