@@ -43,17 +43,17 @@ export default {
   created() {
     this.fetchComic(100);
   },
-  methods: {
-    fetchComic(num) {
-      this.$axios
-        .get(
-          `https://cors-anywhere.herokuapp.com/https://xkcd.com/${num}/info.0.json`
-        )
-        .then((response) => {
-          this.comic = response.data;
-        });
-    },
-  },
+  // methods: {
+  //   fetchComic(num) {
+  //     this.$axios
+  //       .get(
+  //         `https://cors-anywhere.herokuapp.com/https://xkcd.com/${num}/info.0.json`
+  //       )
+  //       .then((response) => {
+  //         this.comic = response.data;
+  //       });
+  //   },
+  // },
 };
 </script>
 <style lang="sass">
