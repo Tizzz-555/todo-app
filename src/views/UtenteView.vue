@@ -19,13 +19,13 @@
         class="mr-4 mt-4"
         @click="submit"
       >
-        submit
+        Invia
       </v-btn>
       <v-btn
         class="mr-4 mt-4"
         @click="clear"
       >
-        clear
+        Annulla
       </v-btn>
     </form>
   </div>
