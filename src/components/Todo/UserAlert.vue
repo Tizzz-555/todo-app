@@ -4,6 +4,7 @@
     class="ml-3 mr-3 mb-3"
     dense
     type="info"
+    dismissible
   >
     Per inserire una nota fai il login del tuo nome in "Utente".
   </v-alert>
