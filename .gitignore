@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/.netlify/state.json
+/.netlify/edge-functions-import-map.json
 
 
 # local env files
