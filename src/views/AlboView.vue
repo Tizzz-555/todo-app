@@ -16,21 +16,19 @@
     </div>
 
     <div class="buttons">
-      <v-btn
-        value="recent"
+      <v-icon
         @click="fetchComic(comic.num - 1)"
         large
+        color="primary"
+        >mdi-skip-previous-circle</v-icon
       >
-        <v-icon>mdi-skip-previous-circle</v-icon>
-      </v-btn>
 
-      <v-btn
-        value="nearby"
+      <v-icon
         @click="fetchComic(comic.num + 1)"
         large
+        color="primary"
+        >mdi-skip-next-circle</v-icon
       >
-        <v-icon>mdi-skip-next-circle</v-icon>
-      </v-btn>
     </div>
   </div>
 </template>

@@ -1,29 +1,6 @@
 <template>
   <div class="about pa-6">
     <h1>About {{ $store.state.appTitle }}</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga libero
-      consequuntur delectus modi ab, ipsam deserunt. Repellendus consectetur quo
-      reiciendis? A dolorem ea libero beatae labore aliquam adipisci voluptates
-      quasi.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga libero
-      consequuntur delectus modi ab, ipsam deserunt. Repellendus consectetur quo
-      reiciendis? A dolorem ea libero beatae labore aliquam adipisci voluptates
-      quasi.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga libero
-      consequuntur delectus modi ab, ipsam deserunt. Repellendus consectetur quo
-      reiciendis? A dolorem ea libero beatae labore aliquam adipisci voluptates
-      quasi.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga libero
-      consequuntur delectus modi ab, ipsam deserunt. Repellendus consectetur quo
-      reiciendis? A dolorem ea libero beatae labore aliquam adipisci voluptates
-      quasi.
-    </p>
+    <p>Una semplice Todo app, creata da Mattia Beccari con Vue 2 e Vuetify.</p>
   </div>
 </template>
