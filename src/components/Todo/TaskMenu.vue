@@ -92,7 +92,7 @@ export default {
           click() {
             this.$store.commit("toggleSorting");
           },
-          show: !this.isCompleted,
+          show: !this.isCompleted && !this.$store.state.search,
         },
       ].filter((item) => item.show);
     },
