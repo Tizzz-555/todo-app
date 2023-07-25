@@ -2,7 +2,7 @@
 
 To Do is a todo list web application. It can manage your daily tasks in a user-friendly and efficient way. The design of this app is based off a [Danny Cornell](https://www.udemy.com/user/dannyconnell/) tutorial, with added functionalities.
 
-It is fully localized in Italian and you can find it on Netlify at [this address](https://todoita-vuetify.netlify.app/?#/).
+It is fully localised in Italian and you can find it on Netlify at [this address](https://todoita-vuetify.netlify.app/?#/).
 
 ## Features
 
